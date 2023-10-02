@@ -10,7 +10,7 @@ class ApiViaCep
 
     public function __construct($data) {
         $this->url = 'https://viacep.com.br/ws/';
-        $this->data = $data;
+        $this->data = $data['cep'];
         $this->type = '/json';
     }
 

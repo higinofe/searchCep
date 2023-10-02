@@ -4,9 +4,15 @@ $(document).ready(function(){
         cepElement = $('#cep').val();
         url = 'app/http/dispach.php';
         
-        $.post(url, cepElement, function(data) {
+        $.post(url, {cep: cepElement}, function(data) {
             data = JSON.parse(data);
+            
+            if (typeof(data.error) !== 'undefined'){
+                return alert(data.error);
+            }
+
             table = elements(data);
+            $('#table').append("");
             $('#table').append(table);
 		});
         
