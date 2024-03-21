@@ -5,45 +5,27 @@ $(document).ready(function(){
         url = 'app/http/dispach.php';
         
         $.post(url, {cep: cepElement}, function(data) {
+            
             data = JSON.parse(data);
+
+            console.log(data);
             
             if (typeof(data.error) !== 'undefined'){
                 return alert(data.error);
             }
 
-            table = elements(data);
-            $('#table').append("");
-            $('#table').append(table);
+            $('#logradouro').val(data.logradouro);
+            $('#complemento').val(data.complemento);
+            $('#bairro').val(data.logradouro);
+            $('#localidade').val(data.localidade);
+            $('#uf').val(data.uf);
+            $('#siafi').val(data.siafi);
+            $('#ibge').val(data.ibge);
+            $('#gia').val(data.gia);
+            $('#ddd').val(data.ddd);
 		});
-        
+       
     });
-
-    elements = (function(data){
-
-        var html = '';
-
-        html += '<tr>';
-        html += '<th>Cep</th>';
-        html += '<th>Lougradoura</th>';
-        html += '<th>Bairro</th>';
-        html += '<th>Cidade</th>';
-        html += '<th>UF</th>';
-        html += '<th>ibge</th>';
-        html += '<th>gia</th>';
-        html += '</tr>';
-
-        html += '<tr>';
-        html += '<td>'+ data['cep'] +'</td>';
-        html += '<td>'+data['logradouro']+'</td>';
-        html += '<td>'+data['bairro']+'</td>';
-        html += '<td>'+data['localidade']+'</td>';
-        html += '<td>'+data['uf']+'</td>';
-        html += '<td>'+data['ibge']+'</td>';
-        html += '<td>'+data['gia']+'</td>';
-        html += '</tr>';
-        return html;
-    });
-
 })
 
 

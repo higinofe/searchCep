@@ -4,27 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta CEP</title>
-
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
     <img class="Logo" src="./resources/assets/frete.png" alt="Consulta CEP">
 
-    <div class="container-input">
-        
-        <label for="text">CEP</label>
-        <input id="cep" type="number" size="30"/>
-        
-        <button id="button" class="button-cta">Buscar</button>
 
-        <div id="container-table" class="container-table hide" >
-            <label for="text">Resultado</label>
-            <table id="table">
-
-            </table>
+    <div class="container-fluid">   
+        <div class="card card-danger" style="width: 30rem;">
+            <div class="card-header" style="width: 30rem;" lass="card-title">Consulta CEP</h3></div>
+                <div class="card-body" >
+                    <form>
+                        <div class="form-group input-group">
+                            <label class="input-group-prepend">CEP:</label>
+                            <input type="number" class="form-control" id="cep">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="button">Consultar</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>logradouro:</label>
+                            <input type="text" class="form-control" id="logradouro" >
+                        </div>
+                        <div class="form-group">
+                            <label>complemento:</label>
+                            <input type="text"  class="form-control" id="complemento" >
+                        </div>
+                        <div class="form-group">
+                            <label>bairro:</label>
+                            <input type="text" class="form-control" id="bairro" >
+                        </div>
+                        <div class="form-group">
+                            <label>localidade:</label>
+                            <input type="text" class="form-control" id="localidade" >
+                        </div>
+                        <div class="form-group">
+                            <label>uf:</label>
+                            <input type="text" class="form-control" id="uf" >
+                        </div>
+                        <div class="form-group">
+                            <label>siafi:</label>
+                            <input type="text" class="form-control" id="siafi" >
+                        </div>
+                        <div class="form-group">
+                            <label>ibge:</label>
+                            <input type="text" class="form-control" id="ibge" >
+                        </div>
+                        <div class="form-group">
+                            <label>gia:</label>
+                            <input type="text" class="form-control" id="gia" >
+                        </div>
+                        <div class="form-group">
+                            <label>ddd:</label>
+                            <input type="text" class="form-control" id="ddd" >
+                        </div>
+        
+                    </form>                
+                </div>         
         </div>
-    
     </div>
+    
 
 <script src="resources/js/jquery.js"></script>
 <script src="resources/js/sript.js"></script>
